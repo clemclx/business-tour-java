@@ -29,7 +29,7 @@ public class GameScoreController {
     }
 
     @PutMapping("/gamescores/{id}")
-    GameScore replaceGameScore(@RequestBody GameScore newGameScore, @PathVariable Long id) {
+    GameScore replaceGameScore(@ModelAttribute GameScore newGameScore, @PathVariable Long id) {
         return gameScoreRepository.findById(id).map(gameScore -> {
             gameScore.setId(newGameScore.getId());
             gameScore.setIdUser(newGameScore.getIdUser());
