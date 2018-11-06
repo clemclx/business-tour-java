@@ -21,6 +21,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 
@@ -39,6 +40,7 @@ dependencies {
 	compile group: 'io.github.openfeign', name: 'feign-okhttp', version: '9.3.1'
 	compile group: 'io.github.openfeign', name: 'feign-slf4j', version: '9.3.1'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.1.0'
 }
 
 dependencyManagement {
