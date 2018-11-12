@@ -9,8 +9,16 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class GameScore {
+    public GameScore(Long moneyEarned, Long nbOfPropertiesBought, Long totalDuration, Integer nbTurns, Long idUser) {
+        this.moneyEarned = moneyEarned;
+        this.nbOfPropertiesBought = nbOfPropertiesBought;
+        this.totalDuration = totalDuration;
+        this.nbTurns = nbTurns;
+        this.idUser = idUser;
+    }
+
     public GameScore(Long id, Long moneyEarned, Long nbOfPropertiesBought, Long totalDuration, Integer nbTurns, Long idUser) {
-        this.id = id;
+        this.id=id;
         this.moneyEarned = moneyEarned;
         this.nbOfPropertiesBought = nbOfPropertiesBought;
         this.totalDuration = totalDuration;
