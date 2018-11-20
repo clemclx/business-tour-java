@@ -18,15 +18,6 @@ public class GameStats {
     private Integer nbTotalGamesPlayed;
     private Long idUser;
 
-    public GameStats(Long nbWins, Long nbLoses, Long averageDurationOfGames, Integer totalMoneyEarned, Integer nbTotalGamesPlayed, Long idUser) {
-        this.nbWins = nbWins;
-        this.nbLoses = nbLoses;
-        this.averageDurationOfGames = averageDurationOfGames;
-        this.totalMoneyEarned = totalMoneyEarned;
-        this.nbTotalGamesPlayed = nbTotalGamesPlayed;
-        this.idUser = idUser;
-    }
-
     public GameStats(){
 
     }
