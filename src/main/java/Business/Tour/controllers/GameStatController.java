@@ -49,4 +49,26 @@ public class GameStatController {
     void deleteGameStat (@PathVariable Long id){
         gameStatRepository.deleteById(id);
     }
+
+    @PutMapping("/gamestat/{id}")
+    int changeGameStat(@ModelAttribute GameStat newGame, @PathVariable  Long id){
+        return gameStatRepository.updateGameStats(id);
+    }
+
+    @GetMapping("/gamestats/nbWins/{id}")
+    Long getOneNbWins(@PathVariable Long id){
+        return gameStatRepository.getOneNbWins(id).orElseThrow(() -> new GameStatNotFoundException(id));
+    }
+    @GetMapping("/gamestats/nbLoses/{id}")
+    Long getOneNbLoses(@PathVariable Long id){
+        return gameStatRepository.getOneNbLoses(id).orElseThrow(() -> new GameStatNotFoundException(id));
+    }
+    @GetMapping("/gamestats/nbGames/{id}")
+    Long getOneNbGames(@PathVariable Long id){
+        return gameStatRepository.getOneNbGames(id).orElseThrow(() -> new GameStatNotFoundException(id));
+    }
+    @GetMapping("/gamestats/moneyEarned/{id}")
+    Integer getOneMoneyEarned(@PathVariable Long id){
+        return gameStatRepository.getOneTotalMoneyEarned(id).orElseThrow(() -> new GameStatNotFoundException(id));
+    }
 }
