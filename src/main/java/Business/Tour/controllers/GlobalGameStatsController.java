@@ -18,11 +18,19 @@ public class GlobalGameStatsController {
         return new ResponseEntity<>(globalGameStatsServices.getOneById(id), HttpStatus.OK);
     }
 
-    @RequestMapping("/gameStats/kda/{id}")
+    @RequestMapping("/gameStats/ratioWL/{id}")
     ResponseEntity<Long> getRatioWL(@PathVariable Long id) {
         return new ResponseEntity<Long>(globalGameStatsServices.getRatioWL(id), HttpStatus.OK);
     }
 
+    @RequestMapping("/gameStats/averageMoneyEarned/{id}")
+    ResponseEntity<Long> getAverageMoneyEarned(@PathVariable Long id) {
+        return new ResponseEntity<Long>(globalGameStatsServices.getAverageMoneyEarned(id), HttpStatus.OK);
+    }
 
+    @RequestMapping("/gameStats/averageDuration/{id}")
+    ResponseEntity<Long> getAverageDuration(@PathVariable Long id) {
+        return new ResponseEntity<Long>(globalGameStatsServices.getAverageDuration(id), HttpStatus.OK);
+    }
 
 }

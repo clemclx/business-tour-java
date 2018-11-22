@@ -14,6 +14,12 @@ public interface IGameStatsClient {
     @RequestLine("GET /{id}")
     GameStats getOneById(@Param("id") Long id);
 
-    @RequestLine("GET /kda/{id}")
+    @RequestLine("GET /ratioWL/{id}")
     Long getRatioWLById(@Param("id") Long id);
+
+    @RequestLine("GET /averageMoneyEarned/{id}")
+    Long getAverageMoneyEarned(@Param("id") Long id);
+
+    @RequestLine("GET /averageDuration/{id}")
+    Long getAverageDuration(@Param("id") Long id);
 }

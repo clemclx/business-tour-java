@@ -53,4 +53,16 @@ public class GlobalGameStatsServices {
 
         return gameStat.getNbWins()/gameStat.getNbLoses();
     }
+
+    public Long getAverageMoneyEarned(Long gameStatId) {
+        GameStats gameStat = iGameStatsClient.getOneById(gameStatId);
+
+        return gameStat.getTotalMoneyEarned()/gameStat.getNbTotalGamesPlayed().longValue();
+    }
+
+    public Long getAverageDuration(Long gameStatId) {
+        GameStats gameStat = iGameStatsClient.getOneById(gameStatId);
+
+        return gameStat.getAverageDurationOfGames()/gameStat.getNbTotalGamesPlayed();
+    }
 }
