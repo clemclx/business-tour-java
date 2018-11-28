@@ -1,6 +1,5 @@
 package Business.Tour.services;
 
-import Business.Tour.clients.IGameClient;
 import Business.Tour.clients.IGameScoreClient;
 import Business.Tour.clients.IGameStatClient;
 import Business.Tour.models.GameScore;
@@ -19,37 +18,30 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Service
 @Slf4j
-public class GameService {
-    private IGameClient iGameClient = Feign.builder()
+public class GameScoreService {
+    private IGameScoreClient iGameScoreClient = Feign.builder()
             .client(new OkHttpClient())
             .encoder(new GsonEncoder())
             .decoder(new GsonDecoder())
             .logger(new Slf4jLogger(String.class))
             .logLevel(Logger.Level.FULL)
-            .target(IGameClient.class, "http://localhost:8082/");
+            .target(IGameScoreClient.class, "http://localhost:8080/");
 
-    public ResponseEntity getRatioWL(Long id) {
+    public ResponseEntity getOneGame(Long id) {
         log.info("Call to the CourseStudent composite getOneById : " + id);
-        Object response =  iGameClient.getRatioWL(id);
+        Object response =  iGameScoreClient.getOneGameScore(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    public ResponseEntity getAvgDuration(Long id) {
+    public ResponseEntity getAll() {
         log.info("getAll gamestats");
-        Object response = iGameClient.getAverageDuration(id);
+        Object response = iGameScoreClient.getAll();
         return  new ResponseEntity(response, HttpStatus.OK);
     }
 
-
-    public ResponseEntity getAvgMoneyEarned(Long id) {
-        log.info("getAll gamestats");
-        Object response = iGameClient.getAverageMoneyEarned(id);
-        return  new ResponseEntity(response, HttpStatus.OK);
-    }
-
-    public ResponseEntity getUpdatedGameStats(Long id) {
-        log.info("updated Game Stats" +id);
-        Object response = iGameClient.getGameStatsUpdated(id);
+    public ResponseEntity createGameScore(@ModelAttribute GameScore gameScore){
+        log.info("create gamescore");
+        Object response = iGameScoreClient.createGameScore(gameScore);
         return new ResponseEntity(response, HttpStatus.OK);
     }
 }
