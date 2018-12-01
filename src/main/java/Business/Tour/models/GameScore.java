@@ -16,6 +16,7 @@ public class GameScore {
         this.idUser = idUser;
     }
 
+
     private @Id
     @GeneratedValue
     Long id;

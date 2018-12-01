@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @Data
 public class GameStats {
+
     private @Id
     @GeneratedValue
     Long id;

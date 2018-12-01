@@ -50,19 +50,28 @@ public class GlobalGameStatsServices {
 
     public Long getRatioWL(Long gameStatId) {
         GameStats gameStat = iGameStatsClient.getOneById(gameStatId);
-
+        if(gameStat.getNbTotalGamesPlayed() == 0L)
+        {
+            return 0L;
+        }
         return gameStat.getNbWins()/gameStat.getNbLoses();
     }
 
     public Long getAverageMoneyEarned(Long gameStatId) {
         GameStats gameStat = iGameStatsClient.getOneById(gameStatId);
-
+        if(gameStat.getTotalMoneyEarned() == 0L)
+        {
+            return 0L;
+        }
         return gameStat.getTotalMoneyEarned()/gameStat.getNbTotalGamesPlayed().longValue();
     }
 
     public Long getAverageDuration(Long gameStatId) {
         GameStats gameStat = iGameStatsClient.getOneById(gameStatId);
-
+        if(gameStat.getAverageDurationOfGames() == 0L)
+        {
+            return 0L;
+        }
         return gameStat.getAverageDurationOfGames()/gameStat.getNbTotalGamesPlayed();
     }
 }
