@@ -24,10 +24,8 @@ public class GameStatsController {
         return gameStatsService.getAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value="/stats")
-    @Headers("Content-Type: application/json")
-    // json curly braces must be escaped!
+    @RequestMapping(method = RequestMethod.POST, value="/stats/")
     ResponseEntity createGameStat(@ModelAttribute GameStat gameStat ){
-        return gameStatsService.createGameStat(gameStat);
+        return gameStatsService.create(gameStat);
     }
 }

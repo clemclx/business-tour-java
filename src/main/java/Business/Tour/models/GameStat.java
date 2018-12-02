@@ -14,6 +14,10 @@ public class GameStat {
         this.idUser = idUser;
     }
 
+    public GameStat() {
+
+    }
+
     public Long getId() {
         return id;
     }

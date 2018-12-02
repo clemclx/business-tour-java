@@ -29,26 +29,22 @@ public class GameService {
             .target(IGameClient.class, "http://localhost:8082/");
 
     public ResponseEntity getRatioWL(Long id) {
-        log.info("Call to the CourseStudent composite getOneById : " + id);
         Object response =  iGameClient.getRatioWL(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     public ResponseEntity getAvgDuration(Long id) {
-        log.info("getAll gamestats");
         Object response = iGameClient.getAverageDuration(id);
         return  new ResponseEntity(response, HttpStatus.OK);
     }
 
 
     public ResponseEntity getAvgMoneyEarned(Long id) {
-        log.info("getAll gamestats");
         Object response = iGameClient.getAverageMoneyEarned(id);
         return  new ResponseEntity(response, HttpStatus.OK);
     }
 
     public ResponseEntity getUpdatedGameStats(Long id) {
-        log.info("updated Game Stats" +id);
         Object response = iGameClient.getGameStatsUpdated(id);
         return new ResponseEntity(response, HttpStatus.OK);
     }

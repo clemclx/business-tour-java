@@ -2,6 +2,7 @@ package Business.Tour.clients;
 
 import Business.Tour.models.GameScore;
 import Business.Tour.models.GameStat;
+import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -25,7 +26,8 @@ public interface IGameStatClient {
     Object getAll();
 
     @RequestLine("POST /gamestats")
-    Object createGameStat(@ModelAttribute GameStat gameStat);
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    Object create(@ModelAttribute GameStat gameStat);
 
 
 }
