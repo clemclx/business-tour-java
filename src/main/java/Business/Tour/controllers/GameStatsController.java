@@ -32,7 +32,7 @@ public class GameStatsController {
     }
 
     @RequestMapping(value="/addScore/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    ResponseEntity addScore(@Param("id") Long id, Object gameScore){
+    ResponseEntity addScore(@PathVariable Long id, Object gameScore){
         return gameStatsService.addScore(id, gameScore);
     }
 }
