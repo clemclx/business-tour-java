@@ -37,9 +37,15 @@ public class GameStatsService {
         return  new ResponseEntity(response, HttpStatus.OK);
     }
 
-    public ResponseEntity create(@ModelAttribute GameStat gameStat){
-        log.info("create gamestat" + gameStat.getNbWins());
-        Object response = iGameStatClient.create(new GameStat());
+    public ResponseEntity create(Object gameStat){
+        log.info("create gamestat" + gameStat);
+        Object response = iGameStatClient.create(gameStat);
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    public ResponseEntity addScore(Long id, Object gameScore){
+        log.info("addScore"+gameScore);
+        Object response = iGameStatClient.addScore(id, gameScore);
+        return new ResponseEntity(response, HttpStatus.OK);
     }
 }

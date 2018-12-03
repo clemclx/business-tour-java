@@ -1,6 +1,7 @@
 package Business.Tour.clients;
 
 import Business.Tour.models.GameScore;
+import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,5 +18,6 @@ public interface IGameScoreClient {
     Object getAll();
 
     @RequestLine("POST /gamescores")
-    Object createGameScore(GameScore gameScore);
+    @Headers("Content-Type: application/json")
+    Object create(Object gameScore);
 }

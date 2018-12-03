@@ -39,9 +39,9 @@ public class GameScoreService {
         return  new ResponseEntity(response, HttpStatus.OK);
     }
 
-    public ResponseEntity createGameScore(@ModelAttribute GameScore gameScore){
-        log.info("create gamescore");
-        Object response = iGameScoreClient.createGameScore(gameScore);
+    public ResponseEntity create(Object gameScore){
+        log.info("create gamestat" + gameScore);
+        Object response = iGameScoreClient.create(gameScore);
         return new ResponseEntity(response, HttpStatus.OK);
     }
 }

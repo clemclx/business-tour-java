@@ -22,5 +22,6 @@ public interface IGameClient {
     @RequestLine("GET /gameStatsUpdated/{id}")
     Object getGameStatsUpdated(@Param("id") Long id);
 
+
 }
 

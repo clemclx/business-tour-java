@@ -5,6 +5,7 @@ import Business.Tour.models.GameStat;
 import Business.Tour.services.GameScoreService;
 import Business.Tour.services.GameStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,8 +25,8 @@ public class GameScoreController {
         return gameScoreService.getAll();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value="/score")
-    ResponseEntity createGameScore(@ModelAttribute GameScore gameScore ){
-        return gameScoreService.createGameScore(gameScore);
+    @RequestMapping(value ="/score", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    ResponseEntity createGameScore(@RequestBody Object gameScore){
+        return gameScoreService.create(gameScore);
     }
 }

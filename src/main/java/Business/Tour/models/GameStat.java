@@ -1,22 +1,11 @@
 package Business.Tour.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
 @Data
+@AllArgsConstructor
 public class GameStat {
-    public GameStat(Long nbWins, Long nbLoses, Long averageDurationOfGames, Integer totalMoneyEarned, Integer nbTotalGamesPlayed, Long idUser) {
-        this.nbWins = nbWins;
-        this.nbLoses = nbLoses;
-        this.averageDurationOfGames = averageDurationOfGames;
-        this.totalMoneyEarned = totalMoneyEarned;
-        this.nbTotalGamesPlayed = nbTotalGamesPlayed;
-        this.idUser = idUser;
-    }
-
-    public GameStat() {
-
-    }
 
     public Long getId() {
         return id;
@@ -81,4 +70,27 @@ public class GameStat {
     private Integer totalMoneyEarned;
     private Integer nbTotalGamesPlayed;
     private Long idUser;
+
+    public GameStat(){
+
+    }
+
+    public GameStat(Long nbWins, Long nbLoses, Long averageDurationOfGames, Integer totalMoneyEarned, Integer nbTotalGamesPlayed, Long idUser) {
+        this.nbWins = nbWins;
+        this.nbLoses = nbLoses;
+        this.averageDurationOfGames = averageDurationOfGames;
+        this.totalMoneyEarned = totalMoneyEarned;
+        this.nbTotalGamesPlayed = nbTotalGamesPlayed;
+        this.idUser = idUser;
+    }
+
+    public GameStat(GameStat gameStat){
+        this.nbWins=gameStat.getNbWins();
+        this.nbLoses=gameStat.getNbLoses();
+        this.averageDurationOfGames = gameStat.getAverageDurationOfGames();
+        this.totalMoneyEarned = gameStat.getTotalMoneyEarned();
+        this.nbTotalGamesPlayed = gameStat.getNbTotalGamesPlayed();
+        this.idUser= gameStat.getIdUser();
+    }
+
 }
