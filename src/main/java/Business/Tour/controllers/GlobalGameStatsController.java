@@ -13,10 +13,6 @@ public class GlobalGameStatsController {
     @Autowired
     GlobalGameStatsServices globalGameStatsServices;
 
-    @RequestMapping("/gameStatsUpdated/{id}")
-    ResponseEntity<GameStatsUpdated> getOne(@PathVariable Long id) {
-        return new ResponseEntity<>(globalGameStatsServices.getOneById(id), HttpStatus.OK);
-    }
 
     @RequestMapping("/gameStats/ratioWL/{id}")
     ResponseEntity<Long> getRatioWL(@PathVariable Long id) {
