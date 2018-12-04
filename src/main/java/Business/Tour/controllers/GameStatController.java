@@ -4,8 +4,10 @@ import Business.Tour.entities.GameStat;
 import Business.Tour.exceptions.GameStatNotFoundException;
 import Business.Tour.repositories.GameStatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.List;
 
 @RestController
@@ -18,14 +20,14 @@ public class GameStatController {
         return gameStatRepository.findAll();
     }
 
-    @RequestMapping(value ="/gamestats", method = RequestMethod.POST)
-    GameStat newGameStat(@ModelAttribute GameStat newGameStat){
+    @RequestMapping(value ="/gamestats", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    GameStat newGameStat(@RequestBody GameStat newGameStat){
         return gameStatRepository.save(newGameStat);
     }
 
     @RequestMapping(value ="/gamestats/{id}", method = RequestMethod.GET)
     GameStat getOne(@PathVariable Long id){
-        return gameStatRepository.findById(id).orElseThrow(() -> new GameStatNotFoundException(id));
+            return gameStatRepository.findById(id).orElseThrow(() -> new GameStatNotFoundException(id));
     }
 
     @PutMapping("/gamestats/{id}")

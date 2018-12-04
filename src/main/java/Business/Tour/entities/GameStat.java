@@ -15,6 +15,16 @@ public class GameStat {
     private @Id
     @GeneratedValue
     Long id;
+
+    public GameStat(Long nbWins, Long nbLoses, Long averageDurationOfGames, Integer totalMoneyEarned, Integer nbTotalGamesPlayed, Long idUser) {
+        this.nbWins = nbWins;
+        this.nbLoses = nbLoses;
+        this.averageDurationOfGames = averageDurationOfGames;
+        this.totalMoneyEarned = totalMoneyEarned;
+        this.nbTotalGamesPlayed = nbTotalGamesPlayed;
+        this.idUser = idUser;
+    }
+
     private Long nbWins;
     private Long nbLoses;
     private Long averageDurationOfGames;

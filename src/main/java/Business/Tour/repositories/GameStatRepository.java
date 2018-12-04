@@ -23,7 +23,7 @@ public interface GameStatRepository extends JpaRepository<GameStat, Long> {
             "    from\n" +
             "      Game_Score gscore\n" +
             "    WHERE\n" +
-            "      gstat.id = gscore.game_Stat_Id\n" +
+            "      gstat.id_user = gscore.id_user\n" +
             "  ) = true THEN nb_Wins + 1 else nb_Wins END,\n" +
             "  nb_Loses = CASE WHEN (\n" +
             "    SELECT\n" +
@@ -31,7 +31,7 @@ public interface GameStatRepository extends JpaRepository<GameStat, Long> {
             "    from\n" +
             "      Game_Score gscore\n" +
             "    WHERE\n" +
-            "      gstat.id = gscore.game_Stat_Id\n" +
+            "      gstat.id_user = gscore.id_user\n" +
             "  ) = false THEN nb_Loses + 1 else nb_Loses END,\n" +
             "  average_Duration_Of_Games = average_Duration_of_Games + (\n" +
             "    SELECT\n" +
@@ -39,7 +39,7 @@ public interface GameStatRepository extends JpaRepository<GameStat, Long> {
             "    from\n" +
             "      Game_Score gscore\n" +
             "    WHERE\n" +
-            "      gstat.id = gscore.game_Stat_Id\n" +
+            "      gstat.id_user = gscore.id_user\n" +
             "  ),\n" +
             "  total_Money_Earned = total_Money_Earned + (\n" +
             "    SELECT\n" +
@@ -47,7 +47,7 @@ public interface GameStatRepository extends JpaRepository<GameStat, Long> {
             "    from\n" +
             "      Game_Score gscore\n" +
             "    WHERE\n" +
-            "      gstat.id = gscore.game_Stat_Id\n" +
+            "      gstat.id_user = gscore.id_user\n" +
             "  ),\n" +
             "  nb_Total_Games_Played = nb_Total_Games_Played + 1\n" +
             "WHERE\n" +
