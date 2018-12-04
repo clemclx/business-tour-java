@@ -17,12 +17,13 @@ public class GameScore {
         this.idUser = idUser;
     }
 
-    public GameScore(Long id, Long moneyEarned, Long nbOfPropertiesBought, Long totalDuration, Integer nbTurns, Long idUser) {
+    public GameScore(Long id, Long moneyEarned, Long nbOfPropertiesBought, Long totalDuration, Integer nbTurns, Boolean isWin, Long idUser) {
         this.id=id;
         this.moneyEarned = moneyEarned;
         this.nbOfPropertiesBought = nbOfPropertiesBought;
         this.totalDuration = totalDuration;
         this.nbTurns = nbTurns;
+        this.isWin = isWin;
         this.idUser = idUser;
     }
 
@@ -33,6 +34,7 @@ public class GameScore {
     private Long nbOfPropertiesBought;
     private Long totalDuration;
     private Integer nbTurns;
+    private Boolean isWin;
     private Long idUser;
 
     public GameScore(){
