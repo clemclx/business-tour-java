@@ -9,9 +9,7 @@ import javax.persistence.Id;
 @Data
 public class GameStats {
 
-    private @Id
-    @GeneratedValue
-    Long id;
+    private Long id;
     private Long nbWins;
     private Long nbLoses;
     private Long averageDurationOfGames;

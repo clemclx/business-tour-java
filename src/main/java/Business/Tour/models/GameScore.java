@@ -17,9 +17,7 @@ public class GameScore {
     }
 
 
-    private @Id
-    @GeneratedValue
-    Long id;
+    private Long id;
     private boolean isWin;
     private Long moneyEarned;
     private Long nbOfPropertiesBought;
