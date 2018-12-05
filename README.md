@@ -7,7 +7,7 @@ git clone https://github.com/clemclx/business-tour-java.git
  
 ## Projet
 
-La partie **Java**  de notre projet est répartie en plusieurs branches.
+La partie **Java**  de notre projet est réparti en plusieurs branches.
 
  - Une branche concernant la partie **API** :  ***dev-api***
  
