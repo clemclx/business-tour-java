@@ -1,2 +1,18 @@
 # business-tour-java
-Java part for the business tour project
+
+## Installation 
+```bash
+git clone https://github.com/clemclx/business-tour-java.git
+```
+ 
+## Projet
+
+La partie **Java**  de notre projet est répartie en plusieurs branches.
+
+ - Une branche concernant la partie **API** :  ***dev-api***
+ 
+ - Une branche concernant la partie **composite** pour les **gamestats** :  ***dev-gamestats-composite***
+
+ - Une branche concernant la partie **core** pour les **gamestats** :  ***dev-gamestats-core***
+
+ - Une branche concernant la partie **core** pour les **gamescore** :  ***dev***
