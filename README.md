@@ -15,4 +15,4 @@ La partie **Java**  de notre projet est répartie en plusieurs branches.
 
  - Une branche concernant la partie **core** pour les **gamestats** :  ***dev-gamestats-core***
 
- - Une branche concernant la partie **core** pour les **gamescore** :  ***dev***
+ - Une branche concernant la partie **core** pour les **gamescores** :  ***dev***
